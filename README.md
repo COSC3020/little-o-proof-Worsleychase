@@ -19,16 +19,25 @@ $f(n)\in o(g(n)) \iff \forall c>0, \exists n_0, \forall n\ge n_0: f(n) < c g(n)$
 
 ## Solution
 
-Let $c=1$, there exists a $n_0$ that for all $n \ge n_0$
+Given the formal definition of little-o:
 
-$\implies f(n) < g(n)$
+$\forall c>0, \exists n_0, \forall n\ge n_0: f(n) < c g(n)$
 
-Let $C=c=1$, and let there exist an $n_1$ that for all $n \ge n_1$. If $n_1 = n_0$:
+if we let $c = 1$, we get:
 
-$\implies |f(n)| \le f(n) \lt g(n)=Cg(n)$
+$\exists n_0, \forall n\ge n_0: f(n) < g(n)$
 
-$\therefore f(n)\in o(g(n))$ implies that $f(n)\in O(g(n))$
+Now if we look at the definition of big-O:
 
+$\forall C>0, \exists n_1, \forall n\ge n_1: f(n)\lt Cg(n) $
+
+let $C = c = 1$ and $n_1 = n_0$
+
+We get:
+
+$\exists n_0, \forall n\ge n_0: f(n) < g(n)$
+
+These simplify to the same definition, therefore $f(n)\in o(g(n))$ implies that $f(n)\in O(g(n))$
 
 ## Disclaimer
 
