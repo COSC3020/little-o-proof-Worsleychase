@@ -16,3 +16,29 @@ page](https://docs.github.com/en/get-started/writing-on-github/working-with-adva
 might help with the notation for mathematical expressions.
 
 $f(n)\in o(g(n)) \iff \forall c>0, \exists n_0, \forall n\ge n_0: f(n) < c g(n)$
+
+## Solution
+
+Given the formal definition of little-o:
+
+$\forall c>0, \exists n_0, \forall n\ge n_0: f(n) < c g(n)$
+
+if we let $c = 1$, we get:
+
+$\exists n_0, \forall n\ge n_0: f(n) < g(n)$
+
+Now if we look at the definition of big-O:
+
+$\forall C>0, \exists n_1, \forall n\ge n_1: f(n)\lt Cg(n) $
+
+let $C = c = 1$ and $n_1 = n_0$
+
+We get:
+
+$\exists n_0, \forall n\ge n_0: f(n) < g(n)$
+
+These simplify to the same definition, therefore $f(n)\in o(g(n))$ implies that $f(n)\in O(g(n))$
+
+## Disclaimer
+
+I certify that I have listed all sources used to complete this exercise, including the use of any Large Language Models. All of the work is my own, except where stated otherwise. I am aware that plagiarism carries severe penalties and that if plagiarism is suspected, charges may be filed against me without prior notice.
