@@ -19,26 +19,32 @@ $f(n)\in o(g(n)) \iff \forall c>0, \exists n_0, \forall n\ge n_0: f(n) < c g(n)$
 
 ## Solution
 
-Given the formal definition of little-o:
+First let's compare little-o and big-O:
 
-$\forall c>0, \exists n_0, \forall n\ge n_0: f(n) < c g(n)$
+Little-o:
 
-if we let $c = 1$, we get:
+$$f(n)\in o(g(n)) \iff \forall c>0, \exists n_0, \forall n\ge n_0: f(n) < c g(n)$$
 
-$\exists n_0, \forall n\ge n_0: f(n) < g(n)$
+This says that for every positive constant $c$ there is a threshold $n_0$ that for all $n$ greater than or equal to $n_0$, the function $f(n)$ is less than $c g(n)$
 
-Now if we look at the definition of big-O:
+Big-O:
 
-$\forall C>0, \exists n_1, \forall n\ge n_1: f(n)\lt Cg(n) $
+$$T(n) \in O(f(n)) \iff \exists c, n_0,  \forall n \geq n_0: T(n) \leq c f(n)$$
 
-let $C = c = 1$ and $n_1 = n_0$
+This says that for every positive (implied) constant $c$ there is a threshold that for all $n$ greater than or equal to $n_0$, the function $T(n)$ is less than _or equal to_ $c f(n)$. We can convert this to similar function notation:
 
-We get:
+$$f(n) \in O(g(n)) \iff \exists c, n_0,  \forall n \geq n_0: f(n) \leq c g(n)$$
 
-$\exists n_0, \forall n\ge n_0: f(n) < g(n)$
+That means to show " $f(n)\in o(g(n))$ implies that $f(n)\in O(g(n))$ " we need to find a positive constant $c$ and $n_0$ that for all $n \geq n_0$, $f(n) \le c g(n)$. For the sake of simplicity we can let $c = 1$. Following the definition of little-o, there must exist some $n_0$ such that $f(n) < g(n)$. Because this is a strict inequality, it must imply the weaker inequality ($\le$):
 
-These simplify to the same definition, therefore $f(n)\in o(g(n))$ implies that $f(n)\in O(g(n))$
+$f(n) \le g(n)$
+
+We have now found a constant $c$ and an $n_0$ such that for all $n \ge n_0, f(n) \le c g(n)$.
+
+$$\therefore  f(n)\in o(g(n)) \implies f(n)\in O(g(n))$$
 
 ## Disclaimer
+
+I used [this](https://math.stackexchange.com/questions/2543452/what-are-the-strong-and-weak-in-mathematics) to make sure the equality strength argument wasn't bogus.
 
 I certify that I have listed all sources used to complete this exercise, including the use of any Large Language Models. All of the work is my own, except where stated otherwise. I am aware that plagiarism carries severe penalties and that if plagiarism is suspected, charges may be filed against me without prior notice.
